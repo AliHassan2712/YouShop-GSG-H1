@@ -10,58 +10,12 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
     <link rel="stylesheet" href="src/output.css" />
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
-      body {
-        font-family: "Roboto", sans-serif;
-        background-color: #ffffff;
-        color: #4a4a4a;
-      }
-      .star-rating {
-        display: inline-block;
-        font-size: 1rem;
-      }
-      .star {
-        color: #e0e0e0;
-      }
-      .filled {
-        color: #ffc107;
-      }
-      .text-youshop {
-        font-size: 30px;
-      }
-      .filter-arrow::after {
-        content: "\f078";
-        font-family: "Font Awesome 5 Free";
-        font-weight: 900;
-        margin-left: 8px;
-        font-size: 10px;
-        color: #999;
-      }
-
-
-      .sidebar-toggle {
-        display: none;
-      }
-
-      .sidebar-aside {
-        transform: translateX(-100%);
-        transition: transform 0.3s ease-in-out;
-      }
-      .sidebar-toggle:checked ~ .sidebar-aside {
-        top: -35px;
-        height: 100vh;
-        transform: translateX(0);
-      }
-
-    </style>
   </head>
   <body>
     <header class="bg-gray-900 text-gray-400 text-xs py-2 px-4 sm:px-8">
       <div
         class="container m-auto flex flex-col sm:flex-row justify-between items-center sm:items-start"
       >
-        <!-- Contact Info -->
         <div class="flex flex-wrap space-x-6 mb-2 sm:mb-0">
           <a
             href="tel:+800123456789"
@@ -79,7 +33,6 @@
           </a>
         </div>
 
-        <!-- Top Links -->
         <div class="flex flex-wrap gap-x-6 gap-y-2 justify-center">
           <a
             href="#"
@@ -121,6 +74,9 @@
         </div>
       </div>
     </header>
+
+
+
     <nav class="bg-white shadow-sm border-b-2">
       <div
         class="container m-auto px-4 flex justify-between items-center border-b py-3"
@@ -251,6 +207,8 @@
       </div>
     </nav>
 
+
+
     <section class="bg-gray-50 py-5">
       <div class="container m-auto px-4">
         <ul class="flex items-center text-xs text-gray-600 space-x-1">
@@ -267,25 +225,32 @@
       </div>
     </section>
 
+
+
     <h1 class="container m-auto mt-3 px-4 text-2xl font-semibold text-gray-700">
       Tablet & Laptops Accessories
     </h1>
 
+
+
+
     <main
       class="container mx-auto p-8 flex flex-col lg:flex-row space-y-8 lg:space-y-0 lg:space-x-8"
     >
-  <input type="checkbox" id="sidebar-toggle" class="sidebar-toggle" />
+  
+    <input type="checkbox" id="sidebar-toggle" class="sidebar-toggle" />
 
-<label
-  for="sidebar-toggle"
-  class="fixed top-40 -right-4 md:hidden bg-orange-500 text-white-900 px-4 py-2 rounded-full flex items-center z-10 cursor-pointer"
->
-  <i class="fa fas fa-filter text-white"></i>
-</label>
 
-<aside
+    <label
+    for="sidebar-toggle"
+    class="fixed top-1/4 -right-4 md:hidden bg-orange-500 text-white-900 px-4 py-2 rounded-full  z-10 cursor-pointer  text-xl hover:bg-orange-600 transition"
+    >
+    <i class="fa fas fa-filter text-white mr-2"></i>
+    </label>
+
+  <aside
   class="fixed top-0 left-0 w-3/4 h-full bg-white p-6 shadow-xl rounded-lg z-30 md:relative md:w-full md:left-auto md:top-auto md:h-svh md:rounded-lg md:block md:transform-none sidebar-aside overflow-y-auto lg:w-1/4 "
->
+  >
   <div class="flex justify-end md:hidden">
     <label
       for="sidebar-toggle"
@@ -466,7 +431,6 @@
               Lenovo TB-71041 8 Plus
             </h3>
             <p class="font-bold text-lg mt-2">$299.99</p>
-            <!-- Hover Section -->
             <div
               class="items-center justify-around mt-4 hidden group-hover:flex"
             >
@@ -501,7 +465,6 @@
               HUAWEI P20 10 inch Pro
             </h3>
             <p class="font-bold text-lg mt-2">$199.99</p>
-            <!-- Hover Section -->
             <div
               class="items-center justify-around mt-4 hidden group-hover:flex"
             >
@@ -536,7 +499,6 @@
               BOP 10-inch Octa Core
             </h3>
             <p class="font-bold text-lg mt-2">$312.99</p>
-            <!-- Hover Section -->
             <div
               class="items-center justify-around mt-4 hidden group-hover:flex"
             >
@@ -571,7 +533,6 @@
               HUAWEI MediaPad T3 7-inch
             </h3>
             <p class="font-bold text-lg mt-2">$299.99</p>
-            <!-- Hover Section -->
             <div
               class="items-center justify-around mt-4 hidden group-hover:flex"
             >
@@ -606,7 +567,6 @@
               Samsung 8.0 inch PC 85
             </h3>
             <p class="font-bold text-lg mt-2">$299.99</p>
-            <!-- Hover Section -->
             <div
               class="items-center justify-around mt-4 hidden group-hover:flex"
             >
@@ -641,7 +601,6 @@
               Huawei Emlen 8.5 inch
             </h3>
             <p class="font-bold text-lg mt-2">$159.99</p>
-            <!-- Hover Section -->
             <div
               class="items-center justify-around mt-4 hidden group-hover:flex"
             >
@@ -676,7 +635,6 @@
               Lenovo Yoga Book XXL
             </h3>
             <p class="font-bold text-lg mt-2">$299.99</p>
-            <!-- Hover Section -->
             <div
               class="items-center justify-around mt-4 hidden group-hover:flex"
             >
@@ -711,7 +669,6 @@
               Lenovo Tab 3 8-inch
             </h3>
             <p class="font-bold text-lg mt-2">$165.99</p>
-            <!-- Hover Section -->
             <div
               class="items-center justify-around mt-4 hidden group-hover:flex"
             >
@@ -744,7 +701,6 @@
             </div>
             <h3 class="font-medium text-sm text-gray-700">Huawei M3 10 inch</h3>
             <p class="font-bold text-lg mt-2">$389.99</p>
-            <!-- Hover Section -->
             <div
               class="items-center justify-around mt-4 hidden group-hover:flex"
             >
@@ -779,7 +735,6 @@
               Huawei Mediapad M3
             </h3>
             <p class="font-bold text-lg mt-2">$165.99</p>
-            <!-- Hover Section -->
             <div
               class="items-center justify-around mt-4 hidden group-hover:flex"
             >
@@ -814,7 +769,6 @@
               Huawei Mediapad M3
             </h3>
             <p class="font-bold text-lg mt-2">$165.99</p>
-            <!-- Hover Section -->
             <div
               class="items-center justify-around mt-4 hidden group-hover:flex"
             >
@@ -849,7 +803,6 @@
               Huawei Mediapad M3
             </h3>
             <p class="font-bold text-lg mt-2">$165.99</p>
-            <!-- Hover Section -->
             <div
               class="items-center justify-around mt-4 hidden group-hover:flex"
             >
@@ -938,7 +891,6 @@
                 Lenovo TB-71041 8 Plus
               </h3>
               <p class="font-bold text-lg mt-2">$299.99</p>
-              <!-- Hover Section -->
               <div
                 class="items-center justify-around mt-4 hidden group-hover:flex"
               >
@@ -973,7 +925,6 @@
                 HUAWEI P20 10 inch Pro
               </h3>
               <p class="font-bold text-lg mt-2">$199.99</p>
-              <!-- Hover Section -->
               <div
                 class="items-center justify-around mt-4 hidden group-hover:flex"
               >
@@ -1008,7 +959,6 @@
                 BOP 10-inch Octa Core
               </h3>
               <p class="font-bold text-lg mt-2">$312.99</p>
-              <!-- Hover Section -->
               <div
                 class="items-center justify-around mt-4 hidden group-hover:flex"
               >
@@ -1043,7 +993,6 @@
                 HUAWEI MediaPad T3 7-inch
               </h3>
               <p class="font-bold text-lg mt-2">$299.99</p>
-              <!-- Hover Section -->
               <div
                 class="items-center justify-around mt-4 hidden group-hover:flex"
               >
