@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Goods page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="src/output.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: #ffffff;
+        color: #4a4a4a;
+      }
+      .star-rating {
+        display: inline-block;
+        font-size: 1rem;
+      }
+      .star {
+        color: #e0e0e0;
+      }
+      .filled {
+        color: #ffc107;
+      }
+      .text-youshop {
+        font-size: 30px;
+      }
+      .filter-arrow::after {
+        content: "\f078";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        margin-left: 8px;
+        font-size: 10px;
+        color: #999;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="bg-gray-900 text-gray-400 text-xs py-2 px-4 sm:px-8">
+      <div
+        class="container m-auto flex flex-col sm:flex-row justify-between items-center sm:items-start"
+      >
+        <!-- Contact Info -->
+        <div class="flex flex-wrap space-x-6 mb-2 sm:mb-0">
+          <a
+            href="tel:+800123456789"
+            class="hover:text-white transition-colors flex items-center"
+          >
+            <i class="fas fa-mobile-alt mr-2 text-gray-500"></i> (+800) 123 456
+            789
+          </a>
+          <a
+            href="mailto:alihassaan@gmail.com"
+            class="hover:text-white transition-colors flex items-center"
+          >
+            <i class="fas fa-envelope mr-2 text-gray-500"></i>
+            alihassan@gmail.com
+          </a>
+        </div>
+
+        <!-- Top Links -->
+        <div class="flex flex-wrap gap-x-6 gap-y-2 justify-center">
+          <a
+            href="#"
+            class="hover:text-white transition-colors flex items-center"
+          >
+            <i class="fas fa-location-arrow mr-2 text-gray-500"></i> Location
+            stores
+          </a>
+          <a
+            href="#"
+            class="hover:text-white transition-colors flex items-center"
+          >
+            <i class="fas fa-list mr-2 text-gray-500"></i> Blog
+          </a>
+          <a
+            href="#"
+            class="hover:text-white transition-colors flex items-center"
+          >
+            <i class="fab fa-product-hunt mr-2 text-gray-500"></i> Guarantee
+          </a>
+          <a
+            href="#"
+            class="hover:text-white transition-colors flex items-center"
+          >
+            <i class="fab fa-paypal mr-2 text-gray-500"></i> Payment
+          </a>
+          <a
+            href="#"
+            class="hover:text-white transition-colors flex items-center"
+          >
+            <i class="fas fa-truck mr-2 text-gray-500"></i> Delivery
+          </a>
+          <a
+            href="#"
+            class="hover:text-white transition-colors flex items-center"
+          >
+            <i class="fas fa-user mr-2 text-gray-500"></i> Register / Sign in
+          </a>
+        </div>
+      </div>
+    </header>
+    <nav class="bg-white shadow-sm border-b-2">
+      <div
+        class="container m-auto px-4 flex justify-between items-center border-b py-3"
+      >
+        <div class="flex items-center space-x-8">
+          <a href="#" class="text-youshop font-bold">
+            <span class="text-orange-500">YOU</span
+            ><span class="text-gray-800">SHOP</span>
+          </a>
+          <p class="text-sm font-bold hidden lg:block w-1/3">
+            Description of your online shop
+          </p>
+        </div>
+
+        <div class="flex items-center space-x-6">
+          <div class="relative md:flex">
+            <input
+              type="text"
+              placeholder="Search"
+              class="bg-white border border-gray-300 rounded-l-full py-2 pl-2 text-sm focus:outline-none focus:border-orange-500 w-96 hidden md:block"
+            />
+            <button
+              class="bg-orange-500 text-white flex items-center justify-center w-9 h-9 rounded-[50%] md:w-auto md:h-auto hover:bg-orange-600 md:px-4 md:rounded-r-full transition"
+            >
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+
+          <p class="text-sm text-orange-500 font-bold hidden lg:block w-1/6">
+            7 days a week from 8:00 am to 5:00 pm
+          </p>
+
+          <a
+            href="#"
+            class="relative text-gray-600 hover:text-orange-500 transition-colors"
+          >
+            <i class="fas fa-heart text-2xl"></i>
+            <span
+              class="absolute -top-1 -right-1 bg-orange-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center"
+              >13</span
+            >
+          </a>
+
+          <a
+            href="#"
+            class="relative flex items-center gap-2 text-gray-600 hover:text-orange-500 transition-colors"
+          >
+            <div class="relative">
+              <i class="fas fa-shopping-cart text-2xl"></i>
+              <span
+                class="absolute -top-1 -right-2 bg-orange-500 text-white text-[10px] rounded-full h-4 w-4 flex items-center justify-center"
+              >
+                0
+              </span>
+            </div>
+            <div class="flex flex-col leading-tight">
+              <span class="text-sm font-medium">My Cart</span>
+              <span class="text-xs text-gray-500">$0.00</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="container m-auto px-4 flex items-center justify-start flex-wrap gap-y-4 gap-x-14"
+      >
+        <a
+          href="#"
+          class="flex items-center bg-orange-500 text-white px-4 py-2 font-medium text-sm"
+        >
+          <i class="fas fa-bars mr-2"></i> All Categories
+        </a>
+
+        <a
+          href="#"
+          class="text-gray-600 font-medium text-sm hover:text-orange-500"
+        >
+          Apple
+        </a>
+        <a
+          href="#"
+          class="text-gray-600 font-medium text-sm hover:text-orange-500"
+        >
+          Samsung
+        </a>
+        <a
+          href="#"
+          class="text-gray-600 font-medium text-sm hover:text-orange-500"
+        >
+          Meizu
+        </a>
+        <a
+          href="#"
+          class="text-gray-600 font-medium text-sm hover:text-orange-500"
+        >
+          Xiaomi
+        </a>
+        <a
+          href="#"
+          class="text-gray-600 font-medium text-sm hover:text-orange-500"
+        >
+          Huawei
+        </a>
+        <a
+          href="#"
+          class="text-gray-600 font-medium text-sm hover:text-orange-500"
+        >
+          Asus
+        </a>
+        <a
+          href="#"
+          class="text-gray-600 font-medium text-sm hover:text-orange-500"
+        >
+          Nokia
+        </a>
+        <a
+          href="#"
+          class="text-gray-600 font-medium text-sm hover:text-orange-500"
+        >
+          Motorola
+        </a>
+        <a
+          href="#"
+          class="text-gray-600 font-medium text-sm hover:text-orange-500"
+        >
+          caterpillar
+        </a>
+      </div>
+    </nav>
+
+    <section class="bg-gray-50 py-5">
+      <div class="container m-auto px-4">
+        <ul class="flex items-center text-xs text-gray-600 space-x-1">
+          <li>
+            <a href="#" class="hover:text-orange-500">Home</a>
+            <span class="mx-1 text-gray-400">/</span>
+          </li>
+          <li>
+            <a href="#" class="hover:text-orange-500">Categories</a>
+            <span class="mx-1 text-gray-400">/</span>
+          </li>
+          <li>Tablet & Laptops Accessories</li>
+        </ul>
+      </div>
+    </section>
+
+    <h1 class="container m-auto mt-3 px-4 text-2xl font-semibold text-gray-700">
+      Tablet & Laptops Accessories
+    </h1>
+
+    <main
+      class="container mx-auto p-8 flex flex-col lg:flex-row space-y-8 lg:space-y-0 lg:space-x-8"
+    >
+      <aside
+        class="hidden md:block w-full lg:w-1/4 bg-white p-6 shadow-xl rounded-lg h-svh"
+      >
+        <!-- Related Categories -->
+        <details open class="mb-6">
+          <summary class="text-lg font-semibold cursor-pointer text-gray-700">
+            Related Categories
+          </summary>
+          <ul class="space-y-2 mt-2 text-sm text-gray-500">
+            <li>
+              <a href="#" class="hover:text-orange-500">Categories</a>
+            </li>
+
+            <li>
+              <a href="#" class="hover:text-orange-500"
+                >Tablet & Laptops Accessories</a
+              >
+            </li>
+          </ul>
+        </details>
+
+        <!-- Refine by -->
+        <details open class="mb-6">
+          <summary class="text-lg font-semibold cursor-pointer text-gray-700">
+            Refine by
+          </summary>
+          <ul class="space-y-3 mt-3 text-sm text-gray-600">
+            <li>
+              <select
+                id="list"
+                class="w-full border border-gray-300 rounded-2xl p-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
+              >
+                <option value="">-- Select --</option>
+                <option value="android-5">Android 5.0</option>
+                <option value="android-6">Android 6.0</option>
+                <option value="android-7">Android 7.0</option>
+                <option value="android-8">Android 8.0</option>
+              </select>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="text-red-500 hover:underline text-sm"
+              >
+                Clear All
+              </button>
+            </li>
+          </ul>
+        </details>
+
+        <!-- Price -->
+        <details open class="mb-6">
+          <summary class="text-lg font-semibold cursor-pointer text-gray-700">
+            Price
+          </summary>
+          <div
+            class="flex justify-between items-center text-xs text-gray-500 mt-2 mb-2"
+          ></div>
+          <input
+            type="range"
+            class="w-full h-1 bg-gray-300 rounded-lg appearance-none cursor-pointer accent-orange-500"
+            min="100"
+            max="1000"
+            value="500"
+          />
+          <span>$100 - $1000</span>
+        </details>
+
+        <!-- Operating System -->
+        <details class="mb-6">
+          <summary class="text-lg font-semibold cursor-pointer text-gray-700">
+            Operating System
+          </summary>
+          <ul class="space-y-2 mt-2 text-sm text-gray-600">
+            <li class="pl-2 hover:text-orange-500 cursor-pointer">
+              Android 6.0
+            </li>
+            <li class="pl-2 hover:text-orange-500 cursor-pointer">
+              Android 7.0
+            </li>
+            <li class="pl-2 hover:text-orange-500 cursor-pointer">
+              Android 8.0
+            </li>
+          </ul>
+        </details>
+
+        <!-- Screen Size -->
+        <details class="mb-6">
+          <summary class="text-lg font-semibold cursor-pointer text-gray-700">
+            Screen Size
+          </summary>
+          <ul class="space-y-2 mt-2 text-sm text-gray-600">
+            <li class="pl-2 hover:text-orange-500 cursor-pointer">
+              1980 × 1770
+            </li>
+            <li class="pl-2 hover:text-orange-500 cursor-pointer">
+              1920 × 1080
+            </li>
+            <li class="pl-2 hover:text-orange-500 cursor-pointer">
+              1600 × 900
+            </li>
+            <li class="pl-2 hover:text-orange-500 cursor-pointer">
+              1280 × 720
+            </li>
+          </ul>
+        </details>
+
+        <!-- Processor Core -->
+        <details class="mb-6">
+          <summary class="text-lg font-semibold cursor-pointer text-gray-700">
+            Processor Core
+          </summary>
+          <ul class="space-y-2 mt-2 text-sm text-gray-600">
+            <li class="pl-2 hover:text-orange-500 cursor-pointer">Dual Core</li>
+            <li class="pl-2 hover:text-orange-500 cursor-pointer">Quad Core</li>
+            <li class="pl-2 hover:text-orange-500 cursor-pointer">Octa Core</li>
+          </ul>
+        </details>
+
+        <!-- Tablet Data Capacity -->
+        <details class="mb-6">
+          <summary class="text-lg font-semibold cursor-pointer text-gray-700">
+            Tablet Data Capacity
+          </summary>
+          <ul class="space-y-2 mt-2 text-sm text-gray-600">
+            <li class="pl-2 hover:text-orange-500 cursor-pointer">16 GB</li>
+            <li class="pl-2 hover:text-orange-500 cursor-pointer">32 GB</li>
+            <li class="pl-2 hover:text-orange-500 cursor-pointer">64 GB</li>
+          </ul>
+        </details>
+
+        <!-- Product Tag -->
+        <details class="mt-8">
+          <summary class="text-lg font-semibold cursor-pointer text-gray-700">
+            Product Tag
+          </summary>
+          <div class="flex flex-wrap gap-2 mt-2 text-sm">
+            <span
+              class="bg-gray-200 text-gray-600 px-3 py-1 rounded-full cursor-pointer hover:bg-orange-500 hover:text-white transition"
+            >
+              Android tablet
+            </span>
+            <span
+              class="bg-gray-200 text-gray-600 px-3 py-1 rounded-full cursor-pointer hover:bg-orange-500 hover:text-white transition"
+            >
+              Windows tablet
+            </span>
+            <span
+              class="bg-gray-200 text-gray-600 px-3 py-1 rounded-full cursor-pointer hover:bg-orange-500 hover:text-white transition"
+            >
+              iOS tablet
+            </span>
+            <span
+              class="bg-gray-200 text-gray-600 px-3 py-1 rounded-full cursor-pointer hover:bg-orange-500 hover:text-white transition"
+            >
+              iPad
+            </span>
+          </div>
+        </details>
+      </aside>
+
+      <div class="w-full lg:w-3/4">
+        <div class="flex justify-between items-center mb-6">
+          <div class="flex items-center space-x-2 text-gray-700">
+            <i class="fas fa-home text-orange-500 text-xl"></i>
+
+            <i class="fas fa-bars text-gray-300 text-xl"></i>
+
+            <p class="text-xs text-gray-500">showing 5 / 150 result</p>
+          </div>
+
+          <div
+            class="flex items-center space-x-2 text-sm text-gray-600 rounded-r-full"
+          >
+            <select
+              class="bg-white border border-gray-300 rounded-xl p-2 py-2 text-sm focus:outline-none focus:border-orange-500"
+            >
+              <option>
+                <span> sort by price </span>
+                low to high
+              </option>
+              <option><span> sort by price </span> high to low</option>
+            </select>
+          </div>
+        </div>
+
+        <div
+          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6"
+        >
+          <!-- Product 1 -->
+          <div
+            class="bg-white p-4 rounded-md shadow-sm border border-gray-200 flex flex-col hover:scale-105 transition-transform duration-200 group relative"
+          >
+            <img
+              src="assets/imgs/prod1.webp"
+              alt="Lenovo TB-71041 8 Plus"
+              class="w-full h-32 object-contain mb-4"
+            />
+            <div class="star-rating mb-2">
+              <span class="star filled">&#9733;</span>
+              <span class="star filled">&#9733;</span>
+              <span class="star filled">&#9733;</span>
+              <span class="star filled">&#9733;</span>
+              <span class="star">&#9733;</span>
+            </div>
+            <h3 class="font-medium text-sm text-gray-700">
+              Lenovo TB-71041 8 Plus
+            </h3>
+            <p class="font-bold text-lg mt-2">$299.99</p>
+            <!-- Hover Section -->
+            <div
+              class="items-center justify-around mt-4 hidden group-hover:flex"
+            >
+              <button
+                class="bg-orange-400 text-white px-4 py-2 rounded-3xl hover:bg-orange-700"
+              >
+                Add To Cart
+              </button>
+              <i
+                class="fas fa-heart hover:text-orange-500 cursor-pointer text-xl"
+              ></i>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div
+            class="bg-white p-4 rounded-md shadow-sm border border-gray-200 flex flex-col hover:scale-105 transition-transform duration-200 group relative"
+          >
+            <img
+              src="assets/imgs/tablet.webp"
+              alt="HUAWEI P20 10 inch Pro"
+              class="w-full h-32 object-contain mb-4"
+            />
+            <div class="star-rating mb-2">
+              <span class="star filled">&#9733;</span>
+              <span class="star filled">&#9733;</span>
+              <span class="star filled">&#9733;</span>
+              <span class="star filled">&#9733;</span>
+              <span class="star">&#9733;</span>
+            </div>
+            <h3 class="font-medium text-sm text-gray-700">
+              HUAWEI P20 10 inch Pro
+            </h3>
+            <p class="font-bold text-lg mt-2">$199.99</p>
+            <!-- Hover Section -->
+            <div
+              class="items-center justify-around mt-4 hidden group-hover:flex"
+            >
+              <button
+                class="bg-orange-400 text-white px-4 py-2 rounded-3xl hover:bg-orange-700"
+              >
+                Add To Cart
+              </button>
+              <i
+                class="fas fa-heart hover:text-orange-500 cursor-pointer text-xl"
+              ></i>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div
+            class="bg-white p-4 rounded-md shadow-sm border border-gray-200 flex flex-col hover:scale-105 transition-transform duration-200 group relative"
+          >
+            <img
+              src="assets/imgs/prod3.webp"
+              alt="BOP 10-inch Octa Core"
+              class="w-full h-32 object-contain mb-4"
+            />
+            <div class="star-rating mb-2">
+              <span class="star filled">&#9733;</span>
+              <span class="star filled">&#9733;</span>
+              <span class="star filled">&#9733;</span>
+              <span class="star filled">&#9733;</span>
+              <span class="star">&#9733;</span>
+            </div>
+            <h3 class="font-medium text-sm text-gray-700">
+              BOP 10-inch Octa Core
+            </h3>
+            <p class="font-bold text-lg mt-2">$312.99</p>
+            <!-- Hover Section -->
+            <div
+              class="items-center justify-around mt-4 hidden group-hover:flex"
+            >
+              <button
+                class="bg-orange-400 text-white px-4 py-2 rounded-3xl hover:bg-orange-700"
+              >
+                Add To Cart
+              </button>
+              <i
+                class="fas fa-heart hover:text-orange-500 cursor-pointer text-xl"
+              ></i>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div
+            class="bg-white p-4 rounded-md shadow-sm border border-gray-200 flex flex-col hover:scale-105 transition-transform duration-200 group relative before:content-['NEW'] before:absolute before:top-2 before:left-0 before:bg-blue-500 before:text-white before:text-xs before:font-bold before:px-2 before:py-1 before:rounded-r-full"
+          >
+            <img
+              src="assets/imgs/prod4.webp"
+              alt="HUAWEI MediaPad T3 7-inch"
+              class="w-full h-32 object-contain mb-4"
+            />
+            <div class="star-rating mb-2">
+              <span class="star filled">&#9733;</span>
+              <span class="star filled">&#9733;</span>
+              <span class="star filled">&#9733;</span>
+              <span class="star filled">&#9733;</span>
+              <span class="star">&#9733;</span>
+            </div>
+            <h3 class="font-medium text-sm text-gray-700">
+              HUAWEI MediaPad T3 7-inch
+            </h3>
+            <p class="font-bold text-lg mt-2">$299.99</p>
+            <!-- Hover Section -->
+            <div
+              class="items-center justify-around mt-4 hidden group-hover:flex"
+            >
+              <button
+                class="bg-orange-400 text-white px-4 py-2 rounded-3xl hover:bg-orange-700"
+              >
+                Add To Cart
+              </button>
+              <i
+                class="fas fa-heart hover:text-orange-500 cursor-pointer text-xl"
+              ></i>
+            </div>
+          </div>
+
+          <!-- Product 5 -->
+          <div
+            class="bg-white p-4 rounded-md shadow-sm border border-gray-200 flex flex-col hover:scale-105 transition-transform duration-200 group relative"
+          >
+            <img
+              src="assets/imgs/prod1.webp"
+              alt="Samsung 8.0 inch PC 85"
+              class="w-full h-32 object-contain mb-4"
+            />
+            <div class="star-rating mb-2">
+              <span class="star filled">&#9733;</span>
+              <span class="star filled">&#9733;</span>
+              <span class="star filled">&#9733;</span>
+              <span class="star filled">&#9733;</span>
+              <span class="star">&#9733;</span>
+            </div>
+            <h3 class="font-medium text-sm text-gray-700">
+              Samsung 8.0 inch PC 85
+            </h3>
+            <p class="font-bold text-lg mt-2">$299.99</p>
+            <!-- Hover Section -->
+            <div
+              class="items-center justify-around mt-4 hidden group-hover:flex"
+            >
+              <button
+                class="bg-orange-400 text-white px-4 py-2 rounded-3xl hover:bg-orange-700"
+              >
+                Add To Cart
+              </button>
+              <i
+                class="fas fa-heart hover:text-orange-500 cursor-pointer text-xl"
+              ></i>
+            </div>
+          </div>
+
+          <!-- Product 6 -->
+          <div
+            class="bg-white p-4 rounded-md shadow-sm border border-gray-200 flex flex-col hover:scale-105 transition-transform duration-200 group relative"
+          >
+            <img
+              src="assets/imgs/prod3.webp "
+              alt="Huawei Emlen 8.5 inch"
+              class="w-full h-32 object-contain mb-4"
+            />
+            <div class="star-rating mb-2">
+              <span class="star filled">&#9733;</span>
+              <span class="star filled">&#9733;</span>
+              <span class="star filled">&#9733;</span>
+              <span class="star filled">&#9733;</span>
+              <span class="star">&#9733;</span>
+            </div>
+            <h3 class="font-medium text-sm text-gray-700">
+              Huawei Emlen 8.5 inch
+            </h3>
+            <p class="font-bold text-lg mt-2">$159.99</p>
+            <!-- Hover Section -->
+            <div
+              class="items-center justify-around mt-4 hidden group-hover:flex"
+            >
+              <button
+                class="bg-orange-400 text-white px-4 py-2 rounded-3xl hover:bg-orange-700"
+              >
+                Add To Cart
+              </button>
+              <i
+                class="fas fa-heart hover:text-orange-500 cursor-pointer text-xl"
+              ></i>
+            </div>
+          </div>
+
+          <!-- Product 7 -->
+          <div
+            class="bg-white p-4 rounded-md shadow-sm border border-gray-200 flex flex-col hover:scale-105 transition-transform duration-200 group relative before:content-['-80%'] before:absolute before:top-2 before:left-0 before:bg-red-500 before:text-white before:text-xs before:font-bold before:px-2 before:py-1 before:rounded-r-full"
+          >
+            <img
+              src="assets/imgs/prod7.webp"
+              alt="Lenovo Yoga Book XXL"
+              class="w-full h-32 object-contain mb-4"
+            />
+            <div class="star-rating mb-2">
+              <span class="star filled">&#9733;</span>
+              <span class="star filled">&#9733;</span>
+              <span class="star filled">&#9733;</span>
+              <span class="star filled">&#9733;</span>
+              <span class="star">&#9733;</span>
+            </div>
+            <h3 class="font-medium text-sm text-gray-700">
+              Lenovo Yoga Book XXL
+            </h3>
+            <p class="font-bold text-lg mt-2">$299.99</p>
+            <!-- Hover Section -->
+            <div
+              class="items-center justify-around mt-4 hidden group-hover:flex"
+            >
+              <button
+                class="bg-orange-400 text-white px-4 py-2 rounded-3xl hover:bg-orange-700"
+              >
+                Add To Cart
+              </button>
+              <i
+                class="fas fa-heart hover:text-orange-500 cursor-pointer text-xl"
+              ></i>
+            </div>
+          </div>
+
+          <!-- Product 8 -->
+          <div
+            class="bg-white p-4 rounded-md shadow-sm border border-gray-200 flex flex-col hover:scale-105 transition-transform duration-200 group relative"
+          >
+            <img
+              src="assets/imgs/prod3.webp"
+              alt="Lenovo Tab 3 8-inch"
+              class="w-full h-32 object-contain mb-4"
+            />
+            <div class="star-rating mb-2">
+              <span class="star filled">&#9733;</span>
+              <span class="star filled">&#9733;</span>
+              <span class="star filled">&#9733;</span>
+              <span class="star filled">&#9733;</span>
+              <span class="star">&#9733;</span>
+            </div>
+            <h3 class="font-medium text-sm text-gray-700">
+              Lenovo Tab 3 8-inch
+            </h3>
+            <p class="font-bold text-lg mt-2">$165.99</p>
+            <!-- Hover Section -->
+            <div
+              class="items-center justify-around mt-4 hidden group-hover:flex"
+            >
+              <button
+                class="bg-orange-400 text-white px-4 py-2 rounded-3xl hover:bg-orange-700"
+              >
+                Add To Cart
+              </button>
+              <i
+                class="fas fa-heart hover:text-orange-500 cursor-pointer text-xl"
+              ></i>
+            </div>
+          </div>
+
+          <!-- Product 9 -->
+          <div
+            class="bg-white p-4 rounded-md shadow-sm border border-gray-200 flex flex-col hover:scale-105 transition-transform duration-200 group relative"
+          >
+            <img
+              src="assets/imgs/prod1.webp"
+              alt="Huawei M3 10 inch"
+              class="w-full h-32 object-contain mb-4"
+            />
+            <div class="star-rating mb-2">
+              <span class="star filled">&#9733;</span>
+              <span class="star filled">&#9733;</span>
+              <span class="star filled">&#9733;</span>
+              <span class="star filled">&#9733;</span>
+              <span class="star">&#9733;</span>
+            </div>
+            <h3 class="font-medium text-sm text-gray-700">Huawei M3 10 inch</h3>
+            <p class="font-bold text-lg mt-2">$389.99</p>
+            <!-- Hover Section -->
+            <div
+              class="items-center justify-around mt-4 hidden group-hover:flex"
+            >
+              <button
+                class="bg-orange-400 text-white px-4 py-2 rounded-3xl hover:bg-orange-700"
+              >
+                Add To Cart
+              </button>
+              <i
+                class="fas fa-heart hover:text-orange-500 cursor-pointer text-xl"
+              ></i>
+            </div>
+          </div>
+
+          <!-- Product 10 -->
+          <div
+            class="bg-white p-4 rounded-md shadow-sm border border-gray-200 flex flex-col hover:scale-105 transition-transform duration-200 group relative"
+          >
+            <img
+              src="assets/imgs/prod4.webp"
+              alt="Huawei Mediapad M3"
+              class="w-full h-32 object-contain mb-4"
+            />
+            <div class="star-rating mb-2">
+              <span class="star filled">&#9733;</span>
+              <span class="star filled">&#9733;</span>
+              <span class="star filled">&#9733;</span>
+              <span class="star filled">&#9733;</span>
+              <span class="star">&#9733;</span>
+            </div>
+            <h3 class="font-medium text-sm text-gray-700">
+              Huawei Mediapad M3
+            </h3>
+            <p class="font-bold text-lg mt-2">$165.99</p>
+            <!-- Hover Section -->
+            <div
+              class="items-center justify-around mt-4 hidden group-hover:flex"
+            >
+              <button
+                class="bg-orange-400 text-white px-4 py-2 rounded-3xl hover:bg-orange-700"
+              >
+                Add To Cart
+              </button>
+              <i
+                class="fas fa-heart hover:text-orange-500 cursor-pointer text-xl"
+              ></i>
+            </div>
+          </div>
+
+          <!-- Product 11 -->
+          <div
+            class="bg-white p-4 rounded-md shadow-sm border border-gray-200 flex flex-col hover:scale-105 transition-transform duration-200 group relative"
+          >
+            <img
+              src="assets/imgs/prod4.webp"
+              alt="Huawei Mediapad M3"
+              class="w-full h-32 object-contain mb-4"
+            />
+            <div class="star-rating mb-2">
+              <span class="star filled">&#9733;</span>
+              <span class="star filled">&#9733;</span>
+              <span class="star filled">&#9733;</span>
+              <span class="star filled">&#9733;</span>
+              <span class="star">&#9733;</span>
+            </div>
+            <h3 class="font-medium text-sm text-gray-700">
+              Huawei Mediapad M3
+            </h3>
+            <p class="font-bold text-lg mt-2">$165.99</p>
+            <!-- Hover Section -->
+            <div
+              class="items-center justify-around mt-4 hidden group-hover:flex"
+            >
+              <button
+                class="bg-orange-400 text-white px-4 py-2 rounded-3xl hover:bg-orange-700"
+              >
+                Add To Cart
+              </button>
+              <i
+                class="fas fa-heart hover:text-orange-500 cursor-pointer text-xl"
+              ></i>
+            </div>
+          </div>
+
+          <!-- Product 12 -->
+          <div
+            class="bg-white p-4 rounded-md shadow-sm border border-gray-200 flex flex-col hover:scale-105 transition-transform duration-200 group relative"
+          >
+            <img
+              src="assets/imgs/prod4.webp"
+              alt="Huawei Mediapad M3"
+              class="w-full h-32 object-contain mb-4"
+            />
+            <div class="star-rating mb-2">
+              <span class="star filled">&#9733;</span>
+              <span class="star filled">&#9733;</span>
+              <span class="star filled">&#9733;</span>
+              <span class="star filled">&#9733;</span>
+              <span class="star">&#9733;</span>
+            </div>
+            <h3 class="font-medium text-sm text-gray-700">
+              Huawei Mediapad M3
+            </h3>
+            <p class="font-bold text-lg mt-2">$165.99</p>
+            <!-- Hover Section -->
+            <div
+              class="items-center justify-around mt-4 hidden group-hover:flex"
+            >
+              <button
+                class="bg-orange-400 text-white px-4 py-2 rounded-3xl hover:bg-orange-700"
+              >
+                Add To Cart
+              </button>
+              <i
+                class="fas fa-heart hover:text-orange-500 cursor-pointer text-xl"
+              ></i>
+            </div>
+          </div>
+        </div>
+        <button class="bg-white px-4 py-2 mt-8 w-full border-2 text-gray-400">
+          <i class="fa fas fab fas fas fa-plus"></i>
+          show more
+        </button>
+
+        <div class="flex justify-center mt-8 space-x-1">
+          <a
+            href="#"
+            class="w-10 h-10 flex items-center justify-center border border-gray-300 text-gray-500 hover:bg-orange-500 hover:text-white transition-colors duration-200"
+            ><i class="fas fa-chevron-left"></i
+          ></a>
+          <a
+            href="#"
+            class="w-10 h-10 flex items-center justify-center border border-orange-500 text-white bg-orange-500 transition-colors duration-200"
+            >1</a
+          >
+          <a
+            href="#"
+            class="w-10 h-10 flex items-center justify-center border border-gray-300 text-gray-500 hover:bg-orange-500 hover:text-white transition-colors duration-200"
+            >2</a
+          >
+          <a
+            href="#"
+            class="w-10 h-10 flex items-center justify-center border border-gray-300 text-gray-500 hover:bg-orange-500 hover:text-white transition-colors duration-200"
+            >3</a
+          >
+          <a
+            href="#"
+            class="w-10 h-10 flex items-center justify-center border border-gray-300 text-gray-500 hover:bg-orange-500 hover:text-white transition-colors duration-200"
+            >4</a
+          >
+          <a
+            href="#"
+            class="w-10 h-10 flex items-center justify-center text-gray-500"
+            >...</a
+          >
+          <a
+            href="#"
+            class="w-10 h-10 flex items-center justify-center border border-gray-300 text-gray-500 hover:bg-orange-500 hover:text-white transition-colors duration-200"
+            >10</a
+          >
+          <a
+            href="#"
+            class="w-10 h-10 flex items-center justify-center border border-gray-300 text-gray-500 hover:bg-orange-500 hover:text-white transition-colors duration-200"
+            ><i class="fas fa-chevron-right"></i
+          ></a>
+        </div>
+        <section class="container mx-auto">
+          <h2 class="text-2xl font-semibold mb-6 text-gray-700 mt-6">
+            Recently Viewed
+          </h2>
+          <div
+            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6"
+          >
+            <!-- Product 1 -->
+            <div
+              class="bg-white p-4 rounded-md shadow-sm border border-gray-200 flex flex-col hover:scale-105 transition-transform duration-200 group relative"
+            >
+              <img
+                src="assets/imgs/prod4.webp"
+                alt="Lenovo TB-71041 8 Plus"
+                class="w-full h-32 object-contain mb-4"
+              />
+              <div class="star-rating mb-2">
+                <span class="star filled">&#9733;</span>
+                <span class="star filled">&#9733;</span>
+                <span class="star filled">&#9733;</span>
+                <span class="star filled">&#9733;</span>
+                <span class="star">&#9733;</span>
+              </div>
+              <h3 class="font-medium text-sm text-gray-700">
+                Lenovo TB-71041 8 Plus
+              </h3>
+              <p class="font-bold text-lg mt-2">$299.99</p>
+              <!-- Hover Section -->
+              <div
+                class="items-center justify-around mt-4 hidden group-hover:flex"
+              >
+                <button
+                  class="bg-orange-400 text-white px-4 py-2 rounded-3xl hover:bg-orange-700"
+                >
+                  Add To Cart
+                </button>
+                <i
+                  class="fas fa-heart hover:text-orange-500 cursor-pointer text-xl"
+                ></i>
+              </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div
+              class="bg-white p-4 rounded-md shadow-sm border border-gray-200 flex flex-col hover:scale-105 transition-transform duration-200 group relative"
+            >
+              <img
+                src="assets/imgs/tablet.webp"
+                alt="HUAWEI P20 10 inch Pro"
+                class="w-full h-32 object-contain mb-4"
+              />
+              <div class="star-rating mb-2">
+                <span class="star filled">&#9733;</span>
+                <span class="star filled">&#9733;</span>
+                <span class="star filled">&#9733;</span>
+                <span class="star filled">&#9733;</span>
+                <span class="star">&#9733;</span>
+              </div>
+              <h3 class="font-medium text-sm text-gray-700">
+                HUAWEI P20 10 inch Pro
+              </h3>
+              <p class="font-bold text-lg mt-2">$199.99</p>
+              <!-- Hover Section -->
+              <div
+                class="items-center justify-around mt-4 hidden group-hover:flex"
+              >
+                <button
+                  class="bg-orange-400 text-white px-4 py-2 rounded-3xl hover:bg-orange-700"
+                >
+                  Add To Cart
+                </button>
+                <i
+                  class="fas fa-heart hover:text-orange-500 cursor-pointer text-xl"
+                ></i>
+              </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div
+              class="bg-white p-4 rounded-md shadow-sm border border-gray-200 flex flex-col hover:scale-105 transition-transform duration-200 group relative"
+            >
+              <img
+                src="assets/imgs/prod4.webp"
+                alt="BOP 10-inch Octa Core"
+                class="w-full h-32 object-contain mb-4"
+              />
+              <div class="star-rating mb-2">
+                <span class="star filled">&#9733;</span>
+                <span class="star filled">&#9733;</span>
+                <span class="star filled">&#9733;</span>
+                <span class="star filled">&#9733;</span>
+                <span class="star">&#9733;</span>
+              </div>
+              <h3 class="font-medium text-sm text-gray-700">
+                BOP 10-inch Octa Core
+              </h3>
+              <p class="font-bold text-lg mt-2">$312.99</p>
+              <!-- Hover Section -->
+              <div
+                class="items-center justify-around mt-4 hidden group-hover:flex"
+              >
+                <button
+                  class="bg-orange-400 text-white px-4 py-2 rounded-3xl hover:bg-orange-700"
+                >
+                  Add To Cart
+                </button>
+                <i
+                  class="fas fa-heart hover:text-orange-500 cursor-pointer text-xl"
+                ></i>
+              </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div
+              class="bg-white p-4 rounded-md shadow-sm border border-gray-200 flex flex-col hover:scale-105 transition-transform duration-200 group"
+            >
+              <img
+                src="assets/imgs/prod1.webp"
+                alt="HUAWEI MediaPad T3 7-inch"
+                class="w-full h-32 object-contain mb-4"
+              />
+              <div class="star-rating mb-2">
+                <span class="star filled">&#9733;</span>
+                <span class="star filled">&#9733;</span>
+                <span class="star filled">&#9733;</span>
+                <span class="star filled">&#9733;</span>
+                <span class="star">&#9733;</span>
+              </div>
+              <h3 class="font-medium text-sm text-gray-700">
+                HUAWEI MediaPad T3 7-inch
+              </h3>
+              <p class="font-bold text-lg mt-2">$299.99</p>
+              <!-- Hover Section -->
+              <div
+                class="items-center justify-around mt-4 hidden group-hover:flex"
+              >
+                <button
+                  class="bg-orange-400 text-white px-4 py-2 rounded-3xl hover:bg-orange-700"
+                >
+                  Add To Cart
+                </button>
+                <i
+                  class="fas fa-heart hover:text-orange-500 cursor-pointer text-xl"
+                ></i>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+
+
+ <section class="bg-white p-6  mx-auto p-8  space-y-8 lg:space-y-0 border-t-2">
+
+<div class="container m-auto">
+    <h2 class="text-xl font-semibold text-gray-800 mb-4 pb-2">Most Keyword Search</h2>
+  <div class="flex flex-wrap items-center gap-2 text-gray-600 text-sm">
+    <span class="hover:text-orange-500 cursor-pointer">Laptops</span>
+    <span class="text-gray-400">|</span>
+    <span class="hover:text-orange-500 cursor-pointer">Smartphones</span>
+    <span class="text-gray-400">|</span>
+    <span class="hover:text-orange-500 cursor-pointer">Tablets</span>
+    <span class="text-gray-400">|</span>
+    <span class="hover:text-orange-500 cursor-pointer">Cameras</span>
+    <span class="text-gray-400">|</span>
+    <span class="hover:text-orange-500 cursor-pointer">Gaming</span>
+    <span class="text-gray-400">|</span>
+    <span class="hover:text-orange-500 cursor-pointer">Accessories</span>
+    <span class="text-gray-400">|</span>
+    <span class="hover:text-orange-500 cursor-pointer">Headphones</span>
+    <span class="text-gray-400">|</span>
+    <span class="hover:text-orange-500 cursor-pointer">Apple</span>
+    <span class="text-gray-400">|</span>
+    <span class="hover:text-orange-500 cursor-pointer">Microsoft</span>
+    <span class="text-gray-400">|</span>
+    <span class="hover:text-orange-500 cursor-pointer">Samsung</span>
+
+
+        <span class="text-gray-400">|</span>
+    <span class="hover:text-orange-500 cursor-pointer">Smartphones</span>
+    <span class="text-gray-400">|</span>
+    <span class="hover:text-orange-500 cursor-pointer">Tablets</span>
+    <span class="text-gray-400">|</span>
+    <span class="hover:text-orange-500 cursor-pointer">Cameras</span>
+    <span class="text-gray-400">|</span>
+    <span class="hover:text-orange-500 cursor-pointer">Gaming</span>
+    <span class="text-gray-400">|</span>
+    <span class="hover:text-orange-500 cursor-pointer">Accessories</span>
+    <span class="text-gray-400">|</span>
+    <span class="hover:text-orange-500 cursor-pointer">Headphones</span>
+    <span class="text-gray-400">|</span>
+    <span class="hover:text-orange-500 cursor-pointer">Apple</span>
+    <span class="text-gray-400">|</span>
+    <span class="hover:text-orange-500 cursor-pointer">Microsoft</span>
+    <span class="text-gray-400">|</span>
+    <span class="hover:text-orange-500 cursor-pointer">Samsung</span>
+
+
+
+        <span class="text-gray-400">|</span>
+    <span class="hover:text-orange-500 cursor-pointer">Smartphones</span>
+    <span class="text-gray-400">|</span>
+    <span class="hover:text-orange-500 cursor-pointer">Tablets</span>
+    <span class="text-gray-400">|</span>
+    <span class="hover:text-orange-500 cursor-pointer">Cameras</span>
+    <span class="text-gray-400">|</span>
+    <span class="hover:text-orange-500 cursor-pointer">Gaming</span>
+    <span class="text-gray-400">|</span>
+    <span class="hover:text-orange-500 cursor-pointer">Accessories</span>
+    <span class="text-gray-400">|</span>
+    <span class="hover:text-orange-500 cursor-pointer">Headphones</span>
+    <span class="text-gray-400">|</span>
+    <span class="hover:text-orange-500 cursor-pointer">Apple</span>
+    <span class="text-gray-400">|</span>
+    <span class="hover:text-orange-500 cursor-pointer">Microsoft</span>
+    <span class="text-gray-400">|</span>
+    <span class="hover:text-orange-500 cursor-pointer">Samsung</span>
+
+
+
+
+        <span class="text-gray-400">|</span>
+    <span class="hover:text-orange-500 cursor-pointer">Smartphones</span>
+    <span class="text-gray-400">|</span>
+    <span class="hover:text-orange-500 cursor-pointer">Tablets</span>
+    <span class="text-gray-400">|</span>
+    <span class="hover:text-orange-500 cursor-pointer">Cameras</span>
+    <span class="text-gray-400">|</span>
+    <span class="hover:text-orange-500 cursor-pointer">Gaming</span>
+    <span class="text-gray-400">|</span>
+    <span class="hover:text-orange-500 cursor-pointer">Accessories</span>
+    <span class="text-gray-400">|</span>
+    <span class="hover:text-orange-500 cursor-pointer">Headphones</span>
+    <span class="text-gray-400">|</span>
+    <span class="hover:text-orange-500 cursor-pointer">Apple</span>
+    <span class="text-gray-400">|</span>
+    <span class="hover:text-orange-500 cursor-pointer">Microsoft</span>
+    <span class="text-gray-400">|</span>
+    <span class="hover:text-orange-500 cursor-pointer">Samsung</span>
+  </div>
+</div>
+</section>
+
+    
+    <footer class="bg-gray-900 text-gray-400">
+      <div
+        class="container mx-auto p-8 lg:flex justify-between space-y-8 lg:space-y-0"
+      >
+        <div class="w-full lg:w-1/4">
+          <h3 class="text-lg font-semibold text-white mb-4">Contact Us</h3>
+          <p class="text-sm">
+           <p> <i class="fas fa-map-marker-alt mr-2 mt-2"></i> 9999 Some-street,
+            Some-city 99999</p>
+           <p> <i class="fas fa-phone-alt mr-2 mt-2"></i> +0000 000 0000</p>
+           <p>
+             <i class="fas fa-envelope mr-2 mt-2"></i>
+            alihassan@gmail.com
+           </p>
+          </p>
+        </div>
+
+        <div class="w-full lg:w-1/4">
+          <h3 class="text-lg font-semibold text-white mb-4">Polici & Info</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-orange-500">About Us</a></li>
+            <li><a href="#" class="hover:text-orange-500">Contact Us</a></li>
+            <li>
+              <a href="#" class="hover:text-orange-500">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-orange-500"
+                >Frequently Asked Questions</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="w-full lg:w-1/4">
+          <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-orange-500">About Us</a></li>
+            <li><a href="#" class="hover:text-orange-500">Contact Us</a></li>
+            <li>
+              <a href="#" class="hover:text-orange-500">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-orange-500"
+                >Frequently Asked Questions</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="w-full lg:w-1/4">
+          <h3 class="text-lg font-semibold text-white mb-4">My Account</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-orange-500">My Account</a></li>
+            <li><a href="#" class="hover:text-orange-500">Order History</a></li>
+            <li><a href="#" class="hover:text-orange-500">Wishlist</a></li>
+            <li><a href="#" class="hover:text-orange-500">Newsletter</a></li>
+               <li><a href="#" class="hover:text-orange-500">Wishlist</a></li>
+         
+          </ul>
+        </div>
+
+        <div class="w-full lg:w-1/3">
+          <h3 class="text-lg font-semibold text-white mb-4">Subscribe Now</h3>
+          <p class="text-sm mb-4">
+            Get notifications of our best promotions and discounts!
+          </p>
+          <div class="flex">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              class="flex-grow p-2 rounded-l-3xl focus:outline-none text-sm bg-white"
+            />
+            <button
+              class="bg-orange-500 text-white px-4 py-2 rounded-r-3xl hover:bg-orange-600 transition-colors"
+            >
+              <i class="fa fab fab fab fa-telegram text-2xl"></i>
+            </button>
+          </div>
+
+          <div class="flex gap-6 mt-4">
+            <a
+              href="
+           "
+            >
+              <i class="fa fab fa-facebook"></i
+            ></a>
+            <a
+              href="
+           "
+            >
+              <i class="fa fab fab fa-twitter"></i
+            ></a>
+            <a
+              href="
+           "
+            >
+              <i class="fa fab fab fa-linkedin"></i
+            ></a>
+            <a
+              href="
+           "
+            >
+              <i class="fa fab fab fa-youtube"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-black text-white text-xs">
+        <div
+          class="container mx-auto px-4 py-2 flex justify-between items-center"
+        >
+          <p>&copy; 2023 YouShop. All Rights Reserved.</p>
+
+          <div class="flex items-center gap-x-3">
+            <a href="#">
+              <img
+                class="h-6 object-contain mix-blend-difference"
+                src="/assets/imgs/bitcoin.webp"
+                alt="Bitcoin"
+              />
+            </a>
+            <a href="#">
+              <img
+                class="h-6 object-contain mix-blend-difference"
+                src="/assets/imgs/visa.jpeg"
+                alt="Visa"
+              />
+            </a>
+            <a href="#">
+              <img
+                class="h-6 object-contain mix-blend-difference"
+                src="/assets/imgs/masterCard.webp"
+                alt="MasterCard"
+              />
+            </a>
+            <a href="#">
+              <img
+                class="h-6 object-contain mix-blend-difference"
+                src="/assets/imgs/express.jpeg"
+                alt="American Express"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
