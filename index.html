@@ -38,6 +38,22 @@
         font-size: 10px;
         color: #999;
       }
+
+
+      .sidebar-toggle {
+        display: none;
+      }
+
+      .sidebar-aside {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+      }
+      .sidebar-toggle:checked ~ .sidebar-aside {
+        top: -35px;
+        height: 100vh;
+        transform: translateX(0);
+      }
+
     </style>
   </head>
   <body>
@@ -258,167 +274,150 @@
     <main
       class="container mx-auto p-8 flex flex-col lg:flex-row space-y-8 lg:space-y-0 lg:space-x-8"
     >
-      <aside
-        class="hidden md:block w-full lg:w-1/4 bg-white p-6 shadow-xl rounded-lg h-svh"
-      >
-        <!-- Related Categories -->
-        <details open class="mb-6">
-          <summary class="text-lg font-semibold cursor-pointer text-gray-700">
-            Related Categories
-          </summary>
-          <ul class="space-y-2 mt-2 text-sm text-gray-500">
-            <li>
-              <a href="#" class="hover:text-orange-500">Categories</a>
-            </li>
+  <input type="checkbox" id="sidebar-toggle" class="sidebar-toggle" />
 
-            <li>
-              <a href="#" class="hover:text-orange-500"
-                >Tablet & Laptops Accessories</a
-              >
-            </li>
-          </ul>
-        </details>
+<label
+  for="sidebar-toggle"
+  class="fixed top-40 -right-4 md:hidden bg-orange-500 text-white-900 px-4 py-2 rounded-full flex items-center z-10 cursor-pointer"
+>
+  <i class="fa fas fa-filter text-white"></i>
+</label>
 
-        <!-- Refine by -->
-        <details open class="mb-6">
-          <summary class="text-lg font-semibold cursor-pointer text-gray-700">
-            Refine by
-          </summary>
-          <ul class="space-y-3 mt-3 text-sm text-gray-600">
-            <li>
-              <select
-                id="list"
-                class="w-full border border-gray-300 rounded-2xl p-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
-              >
-                <option value="">-- Select --</option>
-                <option value="android-5">Android 5.0</option>
-                <option value="android-6">Android 6.0</option>
-                <option value="android-7">Android 7.0</option>
-                <option value="android-8">Android 8.0</option>
-              </select>
-            </li>
-            <li>
-              <button
-                type="button"
-                class="text-red-500 hover:underline text-sm"
-              >
-                Clear All
-              </button>
-            </li>
-          </ul>
-        </details>
+<aside
+  class="fixed top-0 left-0 w-3/4 h-full bg-white p-6 shadow-xl rounded-lg z-30 md:relative md:w-full md:left-auto md:top-auto md:h-svh md:rounded-lg md:block md:transform-none sidebar-aside overflow-y-auto lg:w-1/4 "
+>
+  <div class="flex justify-end md:hidden">
+    <label
+      for="sidebar-toggle"
+      class="text-gray-500 hover:text-gray-700 text-2xl cursor-pointer"
+    >
+      &times;
+    </label>
+  </div>
+  
+  <details open class="mb-6">
+    <summary class="text-lg font-semibold cursor-pointer text-gray-700">
+      Related Categories
+    </summary>
+    <ul class="space-y-2 mt-2 text-sm text-gray-500">
+      <li>
+        <a href="#" class="hover:text-orange-500">Categories</a>
+      </li>
+      <li>
+        <a href="#" class="hover:text-orange-500">Tablet & Laptops Accessories</a>
+      </li>
+    </ul>
+  </details>
 
-        <!-- Price -->
-        <details open class="mb-6">
-          <summary class="text-lg font-semibold cursor-pointer text-gray-700">
-            Price
-          </summary>
-          <div
-            class="flex justify-between items-center text-xs text-gray-500 mt-2 mb-2"
-          ></div>
-          <input
-            type="range"
-            class="w-full h-1 bg-gray-300 rounded-lg appearance-none cursor-pointer accent-orange-500"
-            min="100"
-            max="1000"
-            value="500"
-          />
-          <span>$100 - $1000</span>
-        </details>
+  <details open class="mb-6">
+    <summary class="text-lg font-semibold cursor-pointer text-gray-700">
+      Refine by
+    </summary>
+    <ul class="space-y-3 mt-3 text-sm text-gray-600">
+      <li>
+        <select
+          id="list"
+          class="w-full border border-gray-300 rounded-2xl p-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
+        >
+          <option value="">-- Select --</option>
+          <option value="android-5">Android 5.0</option>
+          <option value="android-6">Android 6.0</option>
+          <option value="android-7">Android 7.0</option>
+          <option value="android-8">Android 8.0</option>
+        </select>
+      </li>
+      <li>
+        <button type="button" class="text-red-500 hover:underline text-sm">
+          Clear All
+        </button>
+      </li>
+    </ul>
+  </details>
 
-        <!-- Operating System -->
-        <details class="mb-6">
-          <summary class="text-lg font-semibold cursor-pointer text-gray-700">
-            Operating System
-          </summary>
-          <ul class="space-y-2 mt-2 text-sm text-gray-600">
-            <li class="pl-2 hover:text-orange-500 cursor-pointer">
-              Android 6.0
-            </li>
-            <li class="pl-2 hover:text-orange-500 cursor-pointer">
-              Android 7.0
-            </li>
-            <li class="pl-2 hover:text-orange-500 cursor-pointer">
-              Android 8.0
-            </li>
-          </ul>
-        </details>
+  <details open class="mb-6">
+    <summary class="text-lg font-semibold cursor-pointer text-gray-700">
+      Price
+    </summary>
+    <div class="flex justify-between items-center text-xs text-gray-500 mt-2 mb-2"></div>
+    <input
+      type="range"
+      class="w-full h-1 bg-gray-300 rounded-lg appearance-none cursor-pointer accent-orange-500"
+      min="100"
+      max="1000"
+      value="500"
+    />
+    <span>$100 - $1000</span>
+  </details>
 
-        <!-- Screen Size -->
-        <details class="mb-6">
-          <summary class="text-lg font-semibold cursor-pointer text-gray-700">
-            Screen Size
-          </summary>
-          <ul class="space-y-2 mt-2 text-sm text-gray-600">
-            <li class="pl-2 hover:text-orange-500 cursor-pointer">
-              1980 × 1770
-            </li>
-            <li class="pl-2 hover:text-orange-500 cursor-pointer">
-              1920 × 1080
-            </li>
-            <li class="pl-2 hover:text-orange-500 cursor-pointer">
-              1600 × 900
-            </li>
-            <li class="pl-2 hover:text-orange-500 cursor-pointer">
-              1280 × 720
-            </li>
-          </ul>
-        </details>
+  <details class="mb-6">
+    <summary class="text-lg font-semibold cursor-pointer text-gray-700">
+      Operating System
+    </summary>
+    <ul class="space-y-2 mt-2 text-sm text-gray-600">
+      <li class="pl-2 hover:text-orange-500 cursor-pointer">Android 6.0</li>
+      <li class="pl-2 hover:text-orange-500 cursor-pointer">Android 7.0</li>
+      <li class="pl-2 hover:text-orange-500 cursor-pointer">Android 8.0</li>
+    </ul>
+  </details>
 
-        <!-- Processor Core -->
-        <details class="mb-6">
-          <summary class="text-lg font-semibold cursor-pointer text-gray-700">
-            Processor Core
-          </summary>
-          <ul class="space-y-2 mt-2 text-sm text-gray-600">
-            <li class="pl-2 hover:text-orange-500 cursor-pointer">Dual Core</li>
-            <li class="pl-2 hover:text-orange-500 cursor-pointer">Quad Core</li>
-            <li class="pl-2 hover:text-orange-500 cursor-pointer">Octa Core</li>
-          </ul>
-        </details>
+  <details class="mb-6">
+    <summary class="text-lg font-semibold cursor-pointer text-gray-700">
+      Screen Size
+    </summary>
+    <ul class="space-y-2 mt-2 text-sm text-gray-600">
+      <li class="pl-2 hover:text-orange-500 cursor-pointer">1980 × 1770</li>
+      <li class="pl-2 hover:text-orange-500 cursor-pointer">1920 × 1080</li>
+      <li class="pl-2 hover:text-orange-500 cursor-pointer">1600 × 900</li>
+      <li class="pl-2 hover:text-orange-500 cursor-pointer">1280 × 720</li>
+    </ul>
+  </details>
 
-        <!-- Tablet Data Capacity -->
-        <details class="mb-6">
-          <summary class="text-lg font-semibold cursor-pointer text-gray-700">
-            Tablet Data Capacity
-          </summary>
-          <ul class="space-y-2 mt-2 text-sm text-gray-600">
-            <li class="pl-2 hover:text-orange-500 cursor-pointer">16 GB</li>
-            <li class="pl-2 hover:text-orange-500 cursor-pointer">32 GB</li>
-            <li class="pl-2 hover:text-orange-500 cursor-pointer">64 GB</li>
-          </ul>
-        </details>
+  <details class="mb-6">
+    <summary class="text-lg font-semibold cursor-pointer text-gray-700">
+      Processor Core
+    </summary>
+    <ul class="space-y-2 mt-2 text-sm text-gray-600">
+      <li class="pl-2 hover:text-orange-500 cursor-pointer">Dual Core</li>
+      <li class="pl-2 hover:text-orange-500 cursor-pointer">Quad Core</li>
+      <li class="pl-2 hover:text-orange-500 cursor-pointer">Octa Core</li>
+    </ul>
+  </details>
 
-        <!-- Product Tag -->
-        <details class="mt-8">
-          <summary class="text-lg font-semibold cursor-pointer text-gray-700">
-            Product Tag
-          </summary>
-          <div class="flex flex-wrap gap-2 mt-2 text-sm">
-            <span
-              class="bg-gray-200 text-gray-600 px-3 py-1 rounded-full cursor-pointer hover:bg-orange-500 hover:text-white transition"
-            >
-              Android tablet
-            </span>
-            <span
-              class="bg-gray-200 text-gray-600 px-3 py-1 rounded-full cursor-pointer hover:bg-orange-500 hover:text-white transition"
-            >
-              Windows tablet
-            </span>
-            <span
-              class="bg-gray-200 text-gray-600 px-3 py-1 rounded-full cursor-pointer hover:bg-orange-500 hover:text-white transition"
-            >
-              iOS tablet
-            </span>
-            <span
-              class="bg-gray-200 text-gray-600 px-3 py-1 rounded-full cursor-pointer hover:bg-orange-500 hover:text-white transition"
-            >
-              iPad
-            </span>
-          </div>
-        </details>
-      </aside>
+  <details class="mb-6">
+    <summary class="text-lg font-semibold cursor-pointer text-gray-700">
+      Tablet Data Capacity
+    </summary>
+    <ul class="space-y-2 mt-2 text-sm text-gray-600">
+      <li class="pl-2 hover:text-orange-500 cursor-pointer">16 GB</li>
+      <li class="pl-2 hover:text-orange-500 cursor-pointer">32 GB</li>
+      <li class="pl-2 hover:text-orange-500 cursor-pointer">64 GB</li>
+    </ul>
+  </details>
 
+  <details class="mt-8">
+    <summary class="text-lg font-semibold cursor-pointer text-gray-700">
+      Product Tag
+    </summary>
+    <div class="flex flex-wrap gap-2 mt-2 text-sm">
+      <span class="bg-white-200 text-gray-600 border-2 px-3 py-1 rounded-full cursor-pointer hover:bg-orange-500 hover:text-white transition">
+        Android tablet
+      </span>
+      <span class="bg-white-200 
+      border-2 text-gray-600 px-3 py-1 rounded-full cursor-pointer hover:bg-orange-500 hover:text-white transition">
+        Windows tablet
+      </span>
+      <span class="bg-white-200
+      border-2 text-gray-600 px-3 py-1 rounded-full cursor-pointer hover:bg-orange-500 hover:text-white transition">
+        iOS tablet
+      </span>
+      <span class="bg-white-200
+      border-2 border-orange-500
+      text-gray-600 px-3 py-1 rounded-full cursor-pointer hover:bg-orange-500 hover:text-white transition">
+        iPad
+      </span>
+    </div>
+  </details>
+</aside>
       <div class="w-full lg:w-3/4">
         <div class="flex justify-between items-center mb-6">
           <div class="flex items-center space-x-2 text-gray-700">
